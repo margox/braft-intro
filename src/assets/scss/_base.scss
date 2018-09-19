@@ -1,0 +1,38 @@
+@import 'config';
+@import 'icons';
+
+html,body{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.pull-left {
+  float: left;
+}
+.pull-right {
+  float: right;
+}
+
+.clearfix{
+  display: block;
+  float: none;
+  &::after{
+    display: block;
+    clear: both;
+    content: '';
+  }
+}
+
+.page-container{
+  height: 100%;
+  overflow: auto;
+}
+
+.container{
+  width: 1100px;
+  margin: {
+    right: auto;
+    left: auto;
+  };
+}
