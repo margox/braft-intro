@@ -1,7 +1,52 @@
 @import "~scssinc";
 
 .page-index{
+  height: 100%;
   .header{
-    height: 400px;
+    height: 100%;
+    overflow: hidden;
+    background-color: $COLOR_ACTIVE;
+    background-image: linear-gradient(to bottom, $COLOR_ACTIVE, $COLOR_ACTIVE - 20);
+    .caption,
+    .sub-caption{
+      padding: 0;
+      color: #fff;
+      text-align: center;
+    }
+    .caption{
+      margin-top: 180px;
+      margin-bottom: 0;
+      font-size: 36px;
+      font-weight: 500;
+    }
+    .sub-caption{
+      margin-top: 10px;
+      font-size: 18px;
+      font-weight: lighter;
+    }
+    .buttons{
+      margin-top: 30px;
+      text-align: center;
+      button{
+        display: inline-block;
+        width: 160px;
+        height: 40px;
+        margin: 0 10px;
+        border: 1px solid #fff;
+        border-radius: 3px;
+        font-size: 14px;
+        line-height: 40px;
+      }
+      .button-view-doc{
+        background-color: #fff;
+        border: none;
+        color: $COLOR_ACTIVE;
+      }
+      .button-fork{
+        background-color: transparent;
+        color: #fff;
+        line-height: 37px;
+      }
+    }
   }
 }
