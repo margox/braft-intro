@@ -2,11 +2,14 @@
 
 .page-index{
   height: 100%;
+
   .header{
-    height: 100%;
-    overflow: hidden;
+    position: relative;
+    height: 850px;
+    margin-bottom: 250px;
+    padding-top: 10px;
     background-color: $COLOR_ACTIVE;
-    background-image: linear-gradient(to bottom, $COLOR_ACTIVE, $COLOR_ACTIVE - 20);
+    background-image: linear-gradient(to bottom, $COLOR_ACTIVE, $COLOR_ACTIVE - 10);
     .caption,
     .sub-caption{
       padding: 0;
@@ -36,6 +39,10 @@
         border-radius: 3px;
         font-size: 14px;
         line-height: 40px;
+        cursor: pointer;
+        &:hover{
+          opacity: .9;
+        }
       }
       .button-view-doc{
         background-color: #fff;
@@ -48,5 +55,221 @@
         line-height: 37px;
       }
     }
+
+    .shape{
+      position: absolute;
+      z-index: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 50px;
+      overflow: hidden;
+      &::after{
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        left: 50%;
+        width: 20000px;
+        height: 20000px;
+        background-color: #fff;
+        border-radius: 50%;
+        content: '';
+        transform: translateX(-50%);
+      }
+    }
+  
+    .easy-demo{
+      position: relative;
+      z-index: 2;
+      width: 960px;
+      margin: 100px auto 0 auto;
+      overflow: hidden;
+      background-color: #fff;
+      background-clip: content-box;
+      border-radius: 5px;
+      border: 1px solid rgba(#000, .2);
+      box-shadow: 0 15px 40px rgba(#000, .2);
+      .bar{
+        height: 30px;
+        padding-left: 10px;
+        background-image: linear-gradient(#f1f1f1, #e1e1e1);
+        border-bottom: 1px solid #aaa;
+        border-radius: 5px 5px 0 0;
+        .icon{
+          float: left;
+          width: 12px;
+          height: 12px;
+          margin: 9px 4px 0 4px;
+          border: 1px solid rgba(#000, .1);
+          border-radius: 50%;
+          &-red{
+            background-color: #eb6a5d;
+          }
+          &-yellow{
+            background-color: #f5c250;
+          }
+          &-green{
+            background-color: #0bd417;
+          }
+        }
+      }
+    }
+    .demo-editor{
+      height: 400px;
+      overflow: auto;
+    }
+    .demo-code{
+      box-sizing: border-box;
+      height: 492px;
+      padding: 15px 30px;
+      overflow: auto;
+      background-color: $COLOR_DARK;
+      font-size: 14px;
+      code{
+        display: block;
+      }
+    }
+    .mode-switch{
+      width: 220px;
+      height: 38px;
+      margin: 50px auto;
+      overflow: hidden;
+      border: 1px solid $COLOR_ACTIVE;
+      border-radius: 19px;
+      button{
+        box-sizing: border-box;
+        width: 110px;
+        height: 38px;
+        border: none;
+        color: $COLOR_ACTIVE;
+        font-size: 14px;
+        font-weight: 400;
+        outline: none;
+        cursor: pointer;
+        &:first-child{
+          border-right: 1px solid $COLOR_ACTIVE;
+        }
+        &.active{
+          background-color: $COLOR_ACTIVE;
+          color: #fff;
+        }
+      }
+    }
   }
+
+  .index-section{
+    padding: 150px 0;
+    .caption{
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      &::after{
+        display: block;
+        width: 60px;
+        height: 1px;
+        background-color: #d1d1d1;
+        margin: 10px auto 0 auto;
+        content: '';
+      }
+      span{
+        color: #515559;
+        font-size: 28px;
+        font-weight: 400;
+      }
+    }
+  }
+
+  .section-features{
+    border-top: 1px solid #e1e1e1;
+    .features{
+      margin-top: 60px;
+      overflow: hidden;
+      .item{
+        box-sizing: border-box;
+        width: ($CONTENT_WIDTH - 60) / 4;
+        height: 300px;
+        float: left;
+        margin: 0 10px;
+        padding: 10px;
+        text-align: center;
+        &:first-child{
+          margin-left: 0;
+        }
+        &:last-child{
+          margin-right: 0;
+        }
+        .icon{
+          display: block;
+          width: 100px;
+          height: 100px;
+          margin: 0 auto;
+          background-size: 80px auto;
+          background-position: 50% 50%;
+          background-repeat: no-repeat;
+          &-1{
+            background-image: url(../../assets/images/heart-with-ribbon.svg);
+          }
+          &-2{
+            background-image: url(../../assets/images/clapper-board.svg);
+          }
+          &-3{
+            background-image: url(../../assets/images/artist-palette.svg);
+          }
+          &-4{
+            background-image: url(../../assets/images/electric-plug.svg);
+          }
+        }
+        .title{
+          margin: 30px 0 0 0;
+          color: $COLOR_ACTIVE;
+          font-size: 18px;
+          font-weight: 400;
+        }
+        .description{
+          color: #919599;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  .section-demos{
+    background-color: #f1f1f1;
+    .demos{
+      margin-top: 60px;
+      .item{
+        display: block;
+        box-sizing: border-box;
+        width: ($CONTENT_WIDTH - 60) / 4;
+        height: 80px;
+        float: left;
+        margin: 0 10px 10px 10px;
+        background-color: #fff;
+        border-radius: 5px;
+        color: #616569;
+        font-size: 16px;
+        line-height: 80px;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        transition: .3s;
+        &:first-child,
+        &:nth-child(5n + 0){
+          margin-left: 0;
+        }
+        &:nth-child(4n + 0){
+          margin-right: 0;
+        }
+        &:hover{
+          background-color: #fafafa;
+          box-shadow: 0 10px 30px rgba(#000, .1);
+        }
+        &.disabled{
+          background-color: #f9f9f9;
+          pointer-events: none;
+        }
+      }
+    }
+  }
+
 }
