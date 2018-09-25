@@ -10,6 +10,9 @@
     padding-top: 10px;
     background-color: $COLOR_ACTIVE;
     background-image: linear-gradient(to bottom, $COLOR_ACTIVE, $COLOR_ACTIVE - 10);
+    // background: linear-gradient(-45deg, $COLOR_ACTIVE, \$COLOR_ACTIVE - 200, $COLOR_ACTIVE, $COLOR_ACTIVE + 200);
+	  // background-size: 400% 400%;
+	  // animation: index-header-gradient 30s ease infinite;
     .caption,
     .sub-caption{
       padding: 0;
@@ -46,8 +49,9 @@
       }
       .button-view-doc{
         background-color: #fff;
+        background-clip: text;
         border: none;
-        color: $COLOR_ACTIVE;
+        color: #515559;
       }
       .button-fork{
         background-color: transparent;
@@ -252,6 +256,7 @@
     .demos{
       margin-top: 60px;
       .item{
+        position: relative;
         display: block;
         box-sizing: border-box;
         width: ($CONTENT_WIDTH - 60) / 4;
@@ -275,6 +280,7 @@
           margin-right: 0;
         }
         &:hover{
+          z-index: 2;
           background-color: #fafafa;
           box-shadow: 0 10px 30px rgba(#000, .1);
         }
@@ -286,4 +292,16 @@
     }
   }
 
+}
+
+@keyframes index-header-gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
 }
