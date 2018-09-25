@@ -3,7 +3,7 @@ import React from 'react'
 
 export default () => (
   <div className="navbar">
-    <div className="container clearfix">
+    <div className="clearfix">
       <div className="logo pull-left">
         <h3>Braft Editor</h3>
       </div>

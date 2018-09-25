@@ -1,7 +1,7 @@
 @import "~scssinc";
 
 .page-index{
-  height: 100%;
+  min-height: 100%;
 
   .header{
     position: relative;
@@ -90,8 +90,8 @@
       border: 1px solid rgba(#000, .2);
       box-shadow: 0 15px 40px rgba(#000, .2);
       .bar{
+        position: relative;
         height: 30px;
-        padding-left: 10px;
         background-image: linear-gradient(#f1f1f1, #e1e1e1);
         border-bottom: 1px solid #aaa;
         border-radius: 5px 5px 0 0;
@@ -103,6 +103,7 @@
           border: 1px solid rgba(#000, .1);
           border-radius: 50%;
           &-red{
+            margin-left: 14px;
             background-color: #eb6a5d;
           }
           &-yellow{
@@ -111,6 +112,19 @@
           &-green{
             background-color: #0bd417;
           }
+        }
+        .title{
+          position: absolute;
+          left: 50%;
+          width: 300px;
+          margin: 0 auto;
+          overflow: hidden;
+          color: #777;
+          font-size: 13px;
+          font-weight: 500;
+          line-height: 30px;
+          text-align: center;
+          transform: translateX(-50%);
         }
       }
     }

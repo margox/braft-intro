@@ -1,6 +1,6 @@
 import './styles.scss'
-import 'braft-editor/dist/index.css'
 import React from 'react'
+import { Link } from 'react-router-dom'
 import BraftEditor from 'braft-editor'
 
 const excludeControls = [
@@ -40,6 +40,7 @@ export default class PageIndex extends React.Component {
               <div className="icon icon-red"></div>
               <div className="icon icon-yellow"></div>
               <div className="icon icon-green"></div>
+              <span className="title">{editorMode === 'editor' ? 'Braft Editor' : 'view-source:Braft Editor'}</span>
             </div>
             {editorMode === 'editor' ? (
               <BraftEditor contentClassName="demo-editor" excludeControls={excludeControls}/>
@@ -88,27 +89,27 @@ export default class PageIndex extends React.Component {
             <span>使用示例</span>
           </h3>
           <div className="container clearfix demos">
-            <a className="item">
+            <Link to="/demos/basic" className="item">
               <span>基本使用</span>
-            </a>
-            <a className="item">
+            </Link>
+            <Link to="/demos/form" className="item">
               <span>结合Ant.Design表单使用</span>
-            </a>
-            <a className="item">
+            </Link>
+            <Link to="/demos/custom" className="item">
               <span>自定义内置控件</span>
-            </a>
-            <a className="item">
+            </Link>
+            <Link to="/demos/extend" className="item">
               <span>增加扩展控件</span>
-            </a>
-            <a className="item">
+            </Link>
+            <Link to="/demos/preview" className="item">
               <span>添加预览功能</span>
-            </a>
-            <a className="item">
+            </Link>
+            <Link to="/demos/unsplash" className="item">
               <span>添加Unsplash图库</span>
-            </a>
-            <a className="item">
+            </Link>
+            <Link to="/demos/upload" className="item">
               <span>使用Ant.Design上传组件</span>
-            </a>
+            </Link>
             <a className="item disabled">
               <span>更多示例，敬请期待...</span>
             </a>

@@ -1,0 +1,28 @@
+@import "~scssinc";
+
+.sidebar{
+  width: 300px;
+  height: 100%;
+  overflow: auto;
+  border-right: 1px solid #eee;
+
+  .demo-entries{
+    margin-top: 30px;
+    a{
+      display: block;
+      padding: 0 30px;
+      color: #515559;
+      font-size: 16px;
+      line-height: 48px;
+      text-decoration: none;
+      &:hover{
+        color: $COLOR_ACTIVE;
+      }
+      &.active{
+        color: $COLOR_ACTIVE;
+        pointer-events: none;
+      }
+    }
+  }
+
+}

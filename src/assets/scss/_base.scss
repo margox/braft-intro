@@ -29,6 +29,13 @@ html,body{
 }
 
 .page-container{
+  height: 100%;
+  overflow: auto;
+}
+
+.full-width-container{
+  margin-top: 60px;
+  height: 100%;
 }
 
 .container{

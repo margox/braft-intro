@@ -1,6 +1,7 @@
 var path = require('path')
   , fs = require('fs')
   , ExtractTextPlugin = require('extract-text-webpack-plugin')
+  , MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
   module: {
@@ -8,11 +9,12 @@ module.exports = {
     rules: [
       { 
         test: /\.(scss|css)$/,
-        use: ExtractTextPlugin.extract([
-          // 'style-loader',
+        use: [
+          'css-hot-loader',
+          MiniCssExtractPlugin.loader,
           'css-loader',
           'sass-loader'
-        ])
+        ]
       }, {
         test: /\.(js|jsx)$/,
         exclude: [
