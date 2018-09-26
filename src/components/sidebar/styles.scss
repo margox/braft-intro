@@ -1,13 +1,14 @@
 @import "~scssinc";
 
 .sidebar{
+  position: sticky;
+  top: 60px;
   box-sizing: border-box;
   width: 240px;
   height: 100%;
-  border-right: 1px solid #eee;
 
   .demo-entries{
-    margin-top: 50px;
+    margin: 50px 0;
     a{
       display: block;
       margin-right: -1px;

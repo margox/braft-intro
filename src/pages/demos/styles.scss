@@ -7,7 +7,8 @@
   .demo-container{
     box-sizing: border-box;
     width: 1100 - 240px;
-    padding: 50px 0 0 50px;
+    padding: 50px 0 50px 50px;
+    border-left: 1px solid #eee;
 
     .caption{
       margin: 0 0 10px 0;
@@ -44,7 +45,7 @@
     .output-content{
       max-height: 100px;
       margin-bottom: 30px;
-      padding: 15px;
+      padding: 0 15px;
       overflow: auto;
       background-color: #f8f9fa;
       border: 1px solid #d1d1d1;
@@ -52,13 +53,17 @@
       color: #919191;
       font-size: 13px;
       font-family: monospace;
-    }
-
-
-    .content{
-      p.desc{
-
+      word-wrap: break-word;
+      word-break: break-all;
+      pre{
+        white-space: pre-wrap;
       }
+    }
+    .demo-code{
+      padding: 15px 30px;
+      background-color: $COLOR_DARK;
+      border-radius: 5px;
+      font-size: 14px;
     }
 
   }
