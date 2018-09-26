@@ -24,6 +24,10 @@ export default class BasicDemo extends React.Component {
       <div className="demo-container pull-right">
         <h3 className="caption">基本使用</h3>
         <h5 className="sub-caption">本页面将演示如何用最基本的方式使用Braft Editor</h5>
+        <h5 className="section-caption">功能要点</h5>
+        <ul className="points">
+          <li>- 使用editorState.toHTML()实时获取html</li>
+        </ul>
         <h5 className="section-caption">编辑器演示</h5>
         <div className="embed-editor">
           <BraftEditor value={editorState} onChange={this.handleChange} contentClassName="demo-editor"/>
