@@ -16,6 +16,11 @@
   "plugins": [
     "react-hot-loader/babel",
     "@babel/transform-runtime",
-    "@babel/proposal-class-properties"
+    "@babel/proposal-class-properties",
+    ["prismjs", {
+      "languages": ["javascript", "css", "jsx"],
+      "theme": "tomorrow",
+      "css": true
+    }]
   ]
 }

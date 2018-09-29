@@ -1,11 +1,11 @@
 import 'braft-editor/dist/index.css'
 import React from 'react'
-import BraftEditor, { EditorState } from 'braft-editor'
+import BraftEditor from 'braft-editor'
 
 export default class BasicDemo extends React.Component {
 
   state = {
-    editorState: EditorState.createFrom(null),
+    editorState: BraftEditor.createEditorState(null),
     outputHTML: '<p></p>'
   }
 

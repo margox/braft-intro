@@ -42,12 +42,12 @@ export default class BasicDemo extends React.Component {
 
     return (
       <div className="demo-container pull-right">
-        <h3 className="caption">自定义内置控件</h3>
-        <h5 className="sub-caption">本页中的编辑器只显示了少量的控件，并将加粗按钮的图标替换为了文字</h5>
+        <h3 className="caption">设置媒体库初始内容</h3>
+        <h5 className="sub-caption">本页面将演示如何设置媒体库的初始内容，借此可以实现媒体库列表的持久化</h5>
         <h5 className="section-caption">功能要点</h5>
         <ul className="points">
-          <li>- 使用controls指定需要展示的控件</li>
-          <li>- 使用contentStyle调整编辑区域的高度，并增加内阴影</li>
+          <li>- 使用media.items属性设置媒体库内容</li>
+          <li>- 获取媒体库实例并操作媒体库内容</li>
         </ul>
         <h5 className="section-caption">注意事项</h5>
         <ul className="points">

@@ -1,0 +1,1 @@
+export const formatHTML = html =>  html.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')

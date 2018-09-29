@@ -61,13 +61,15 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.0.0",
+    "babel-plugin-prismjs": "^1.0.2",
     "braft-convert": "^2.0.2",
-    "braft-editor": "^2.0.7",
+    "braft-editor": "^2.0.8",
     "braft-finder": "^0.0.10",
     "braft-utils": "^0.0.17",
     "draft-convert": "^2.0.0",
     "draft-js": "^0.10.3",
     "draftjs-utils": "^0.9.4",
+    "prismjs": "^1.15.0",
     "react-router-dom": "^4.3.1"
   },
   "peerDependencies": {

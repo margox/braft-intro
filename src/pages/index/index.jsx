@@ -105,7 +105,7 @@ export default class PageIndex extends React.Component {
               <span>添加预览功能</span>
             </Link>
             <Link to="/demos/unsplash" className="item">
-              <span>添加Unsplash图库</span>
+              <span>设置媒体库初始内容</span>
             </Link>
             <Link to="/demos/upload" className="item">
               <span>使用Ant.Design上传组件</span>
