@@ -33,6 +33,7 @@
         "allowForLoopAfterthoughts": true
       }
     ],
+    "no-console": 0,
     "eol-last": ["error", "always"],
     "class-methods-use-this": 0,
     "function-paren-newline": 0,

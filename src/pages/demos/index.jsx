@@ -7,6 +7,8 @@ import BasicDemo from 'pages/basic'
 import CustomDemo from 'pages/custom'
 import ExtendDemo from 'pages/extend'
 import PreviewDemo from 'pages/preview'
+import MediaDemo from 'pages/media'
+import FormDemo from 'pages/antd-form'
 
 export default () => (
   <div className="page-demo container clearfix">
@@ -15,5 +17,7 @@ export default () => (
     <Route path="/demos/custom" component={CustomDemo}></Route>
     <Route path="/demos/extend" component={ExtendDemo}></Route>
     <Route path="/demos/preview" component={PreviewDemo}></Route>
+    <Route path="/demos/media" component={MediaDemo}></Route>
+    <Route path="/demos/antd-form" component={FormDemo}></Route>
   </div>
 )
