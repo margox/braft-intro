@@ -45,6 +45,13 @@
         font-size: 14px;
         font-weight: 400;
       }
+      a{
+        color: $COLOR_ACTIVE;
+        text-decoration: none;
+        &:hover{
+          text-decoration: underline;
+        }
+      }
     }
     .embed-editor{
       margin-bottom: 30px;
@@ -52,7 +59,13 @@
       border-radius: 5px;
     }
     .demo-editor{
-      height: 450px;
+      height: 350px;
+    }
+    .upload-button{
+      i{
+        display: inline-block;
+        margin-top: 3px;
+      }
     }
     .output-content{
       max-height: 100px;

@@ -1,16 +1,39 @@
 import React from 'react'
-import BraftEditor, { EditorState } from 'braft-editor'
+import BraftEditor from 'braft-editor'
 import { formatHTML } from '../utils/base'
 
 const basicDemoCode = formatHTML(`import 'braft-editor/dist/index.css'
 import React from 'react'
-import BraftEditor, { EditorState } from 'braft-editor'
+import BraftEditor from 'braft-editor'
 
 export default class BasicDemo extends React.Component {
 
   state = {
-    editorState: EditorState.createFrom(null),
+    editorState: BraftEditor.createEditorState('<p>Hello <b>World!</b></p>'), // 设置编辑器初始内容
     outputHTML: '<p></p>'
+  }
+
+  componentDidMount () {
+    this.isLivinig = true
+    // 3秒后更改编辑器内容
+    setTimeout(this.setEditorContentAsync, 3000)
+  }
+
+  componentWillUnmount () {
+    this.isLivinig = false
+  }
+
+  handleChange = (editorState) => {
+    this.setState({
+      editorState: editorState,
+      outputHTML: editorState.toHTML()
+    })
+  }
+
+  setEditorContentAsync = () => {
+    this.isLivinig && this.setState({
+      editorState: BraftEditor.createEditorState('<p>你好，<b>世界!</b><p>')
+    })
   }
 
   handleChange = (editorState) => {
@@ -41,14 +64,30 @@ export default class BasicDemo extends React.Component {
 export default class BasicDemo extends React.Component {
 
   state = {
-    editorState: EditorState.createFrom(null),
+    editorState: BraftEditor.createEditorState('<p>Hello <b>World!</b></p>'), // 设置编辑器初始内容
     outputHTML: '<p></p>'
+  }
+
+  componentDidMount () {
+    this.isLivinig = true
+    // 3秒后更改编辑器内容
+    setTimeout(this.setEditorContentAsync, 3000)
+  }
+
+  componentWillUnmount () {
+    this.isLivinig = false
   }
 
   handleChange = (editorState) => {
     this.setState({
       editorState: editorState,
       outputHTML: editorState.toHTML()
+    })
+  }
+
+  setEditorContentAsync = () => {
+    this.isLivinig && this.setState({
+      editorState: BraftEditor.createEditorState('<p>你好，<b>世界!</b><p>')
     })
   }
 
@@ -62,7 +101,13 @@ export default class BasicDemo extends React.Component {
         <h5 className="sub-caption">本页面将演示如何用最基本的方式使用Braft Editor</h5>
         <h5 className="section-caption">功能要点</h5>
         <ul className="points">
+          <li>- 使用BraftEditor.createEditorState创建editorState</li>
           <li>- 使用editorState.toHTML()实时获取html</li>
+        </ul>
+        <h5 className="section-caption">注意事项</h5>
+        <ul className="points">
+          <li>- 编辑器的value属性必须是一个editorState对象</li>
+          <li>- 实际使用时请避免在onChange中直接toHTML，配合节流函数或者在合适的时机使用更恰当</li>
         </ul>
         <h5 className="section-caption">编辑器演示</h5>
         <div className="embed-editor">

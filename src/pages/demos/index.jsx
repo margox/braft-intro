@@ -9,6 +9,7 @@ import ExtendDemo from 'pages/extend'
 import PreviewDemo from 'pages/preview'
 import MediaDemo from 'pages/media'
 import FormDemo from 'pages/antd-form'
+import UploadDemo from 'pages/antd-upload'
 
 export default () => (
   <div className="page-demo container clearfix">
@@ -19,5 +20,6 @@ export default () => (
     <Route path="/demos/preview" component={PreviewDemo}></Route>
     <Route path="/demos/media" component={MediaDemo}></Route>
     <Route path="/demos/antd-form" component={FormDemo}></Route>
+    <Route path="/demos/antd-upload" component={UploadDemo}></Route>
   </div>
 )
