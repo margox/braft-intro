@@ -12,9 +12,10 @@ export default () => (
       <NavLink to="/demos/media">设置媒体库初始内容</NavLink>
       <NavLink to="/demos/antd-form">在Ant Design表单中使用</NavLink>
       <NavLink to="/demos/antd-upload">使用Ant Design上传组件</NavLink>
-      <NavLink to="/demos/hooks">使用行为钩子hooks</NavLink>
-      <NavLink to="/demos/braft-finder">单独使用媒体库组件</NavLink>
-      <NavLink to="/demos/braft-utils">结合Braft Utils使用</NavLink>
+      <NavLink to="/demos/rem">输出内容适配REM方案</NavLink>
+      <NavLink to="/demos/inline-style">增加自定义Inline Style</NavLink>
+      <NavLink to="/demos/entitiy">增加自定义Entity</NavLink>
+      <NavLink to="/demos/prism">使用代码高亮扩展模块</NavLink>
     </div>
   </div>
 )

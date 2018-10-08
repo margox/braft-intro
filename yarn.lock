@@ -1269,32 +1269,33 @@ braces@^2.3.0, braces@^2.3.1:
     split-string "^3.0.2"
     to-regex "^3.0.1"
 
-braft-convert@^2.0.2:
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/braft-convert/-/braft-convert-2.0.3.tgz#2312ffb0f3232f14e201881f9fe02a7b8180132b"
+braft-convert@^2.1.4:
+  version "2.1.4"
+  resolved "https://registry.yarnpkg.com/braft-convert/-/braft-convert-2.1.4.tgz#6b0cd317b32be2ac93d7dd31751671c6b7d854f1"
   dependencies:
     draft-convert "^2.0.0"
     draft-js "^0.10.3"
 
-braft-editor@^2.0.8:
-  version "2.0.10"
-  resolved "https://registry.yarnpkg.com/braft-editor/-/braft-editor-2.0.10.tgz#4a3ff283745032784a2967908ec0074a46e98c50"
+braft-editor@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/braft-editor/-/braft-editor-2.1.0.tgz#81d0d732fd88b79e3dccb7c87f466dc40f21c84c"
   dependencies:
     "@babel/runtime" "^7.0.0"
-    braft-convert "^2.0.2"
+    braft-convert "^2.1.4"
     braft-finder "^0.0.10"
-    braft-utils "^0.0.17"
+    braft-utils "^2.1.0"
     draft-convert "^2.0.0"
     draft-js "^0.10.3"
+    draft-js-multidecorators "^1.0.0"
     draftjs-utils "^0.9.4"
 
 braft-finder@^0.0.10:
   version "0.0.10"
   resolved "https://registry.yarnpkg.com/braft-finder/-/braft-finder-0.0.10.tgz#1620cd56f423bca07978db3faf646a03f56fdb52"
 
-braft-utils@^0.0.17:
-  version "0.0.17"
-  resolved "https://registry.yarnpkg.com/braft-utils/-/braft-utils-0.0.17.tgz#2fa7979fa0a813fb1c3c0d95c25bb4ae7312e9d6"
+braft-utils@^2.1.0, braft-utils@^2.1.2:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/braft-utils/-/braft-utils-2.1.2.tgz#115480335a28c44a27e92711402771843d1657bb"
 
 brorand@^1.0.1:
   version "1.1.0"
@@ -2289,6 +2290,12 @@ draft-convert@^2.0.0:
   dependencies:
     immutable "~3.7.4"
     invariant "^2.2.1"
+
+draft-js-multidecorators@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/draft-js-multidecorators/-/draft-js-multidecorators-1.0.0.tgz#6c4be8d7b78dd2b966ee51ee6cc179b9b535e612"
+  dependencies:
+    immutable "*"
 
 draft-js@^0.10.0, draft-js@^0.10.3, draft-js@~0.10.0:
   version "0.10.5"
@@ -3405,7 +3412,7 @@ ignore@^4.0.2, ignore@^4.0.6:
   version "4.0.6"
   resolved "https://registry.yarnpkg.com/ignore/-/ignore-4.0.6.tgz#750e3db5862087b4737ebac8207ffd1ef27b25fc"
 
-immutable@^3.7.4:
+immutable@*, immutable@^3.7.4:
   version "3.8.2"
   resolved "https://registry.yarnpkg.com/immutable/-/immutable-3.8.2.tgz#c2439951455bb39913daf281376f1530e104adf3"
 
