@@ -136,7 +136,7 @@ export default class BasicDemo extends React.Component {
         </ul>
         <h5 className="section-caption">注意事项</h5>
         <ul className="points">
-          <li>- 本示例中的uploadHandler仅作为演示用，实际使用中请使用真正的上传功能</li>
+          <li>- 本示例中的ImageUtils.compressImage仅作为演示用，实际使用中请使用真实的上传功能</li>
           <li>- 通过component类型的extendControls来集成Upload组件，需要设置showUploadList为false以保证显示正常</li>
           <li>- 若需要使用完整的Upload组件功能，请使用dropdown或者modal类型的extendControls来进行集成</li>
         </ul>

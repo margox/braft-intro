@@ -85,7 +85,7 @@
     .easy-demo{
       position: relative;
       z-index: 2;
-      width: 960px;
+      width: 900px;
       margin: 100px auto 0 auto;
       overflow: hidden;
       background-color: #fff;
@@ -133,19 +133,17 @@
       }
     }
     .demo-editor{
-      height: 400px;
+      height: 390px;
       overflow: auto;
     }
     .demo-code{
       box-sizing: border-box;
       height: 492px;
+      margin: 0;
       padding: 15px 30px;
       overflow: auto;
       background-color: $COLOR_DARK;
       font-size: 14px;
-      code{
-        display: block;
-      }
     }
     .mode-switch{
       width: 220px;

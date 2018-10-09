@@ -2,13 +2,30 @@ import './styles.scss'
 import React from 'react'
 import { Link } from 'react-router-dom'
 import BraftEditor from 'braft-editor'
+import Prism from 'prismjs'
+import { formatHTML } from '../utils/base'
 
-const excludeControls = [
-  'letter-spacing',
-  'line-height',
-  'clear',
-  'remove-styles'
-]
+const easyDemoCode = formatHTML(`import 'braft-editor/dist/index.css'
+import React from 'react'
+import BraftEditor from 'braft-editor'
+
+export default class PageDemo extends React.Component {
+
+  state = {
+    editorState: BraftEditor.createEditorState(null)
+  }
+
+  render () {
+    return (
+      <BraftEditor value={this.state.editorStste} onChange={this.handleChange} />
+    )
+  }
+
+  handleChange = (editorStste) => {
+    this.setState({ editorStste })
+  }
+
+}`)
 
 export default class PageIndex extends React.Component {
 
@@ -19,6 +36,8 @@ export default class PageIndex extends React.Component {
   switchMode = (event) => {
     this.setState({
       editorMode: event.currentTarget.dataset.mode
+    }, () => {
+      this.state.editorMode === 'code' && Prism.highlightAll()
     })
   }
 
@@ -43,12 +62,13 @@ export default class PageIndex extends React.Component {
               <span className="title">{editorMode === 'editor' ? 'Braft Editor' : 'view-source:Braft Editor'}</span>
             </div>
             {editorMode === 'editor' ? (
-              <BraftEditor contentClassName="demo-editor" excludeControls={excludeControls}/>
+              <BraftEditor contentClassName="demo-editor"/>
             ) : (
-              <div className="demo-code" dangerouslySetInnerHTML={{
-                __html: '<pre><code><span style="line-height:normal"><span style="color:#c586c0">import</span> <span style="color:#ce9178">&#x27;braft-editor/dist/index.css&#x27;</span><br/><span style="color:#c586c0">import</span> <span style="color:#9cdcfe">React</span> <span style="color:#c586c0">from</span> <span style="color:#ce9178">&#x27;react&#x27;</span><br/><span style="color:#c586c0">import</span> <span style="color:#9cdcfe">BraftEditor, { EditorState }</span> <span style="color:#c586c0">from</span> <span style="color:#ce9178">&#x27;braft-editor&#x27;</span></span></code><br/><span style="line-height:normal"><span style="color:#ce9178"><code><span style="color:#c586c0">export</span> <span style="color:#c586c0">default</span> <span style="color:#569cd6">class</span> <span style="color:#4ec9b0">PageDemo</span> <span style="color:#569cd6">extends</span> <span style="color:#4ec9b0">React</span><span style="color:#d4d4d4">.</span><span style="color:#4ec9b0">Component</span><span style="color:#d4d4d4"> {</span></code></span></span><br/><code><span style="line-height:normal"><span style="color:#9cdcfe">  state</span> <span style="color:#d4d4d4">= {</span><br/>    <span style="color:#9cdcfe">editorState:</span> <span style="color:#9cdcfe">EditorState</span><span style="color:#d4d4d4">.</span><span style="color:#dcdcaa">createFrom</span><span style="color:#d4d4d4">(</span><span style="color:#569cd6">null</span><span style="color:#d4d4d4">)</span><br/><span style="color:#d4d4d4">  }</span><br/><br/>  <span style="color:#dcdcaa">render</span><span style="color:#d4d4d4"> () {</span><br/> <br/>    <span style="color:#569cd6">const</span><span style="color:#d4d4d4"> { </span><span style="color:#9cdcfe">editorStste</span><span style="color:#d4d4d4"> } =</span> <span style="color:#569cd6">this</span><span style="color:#d4d4d4">.</span><span style="color:#9cdcfe">state</span><br/>    <span style="color:#569cd6">const</span> <span style="color:#9cdcfe">excludeControls</span> <span style="color:#d4d4d4">= [</span><span style="color:#ce9178">&#x27;letter-spacing&#x27;</span><span style="color:#d4d4d4">,</span> <span style="color:#ce9178">&#x27;line-height&#x27;</span><span style="color:#d4d4d4">,</span> <span style="color:#ce9178">&#x27;clear&#x27;</span><span style="color:#d4d4d4">,</span> <span style="color:#ce9178">&#x27;remove-styles&#x27;</span><span style="color:#d4d4d4">]</span><br/><br/>    <span style="color:#c586c0">return</span><span style="color:#d4d4d4"> (</span><br/>      <span style="color:#808080">&lt;</span><span style="color:#4ec9b0">BraftEditor</span> <span style="color:#9cdcfe">value</span><span style="color:#d4d4d4">=</span><span style="color:#569cd6">{</span><span style="color:#9cdcfe">editorStste</span><span style="color:#569cd6">}</span> <span style="color:#9cdcfe">onChange</span><span style="color:#d4d4d4">=</span><span style="color:#569cd6">{this</span><span style="color:#d4d4d4">.</span><span style="color:#9cdcfe">handleChange</span><span style="color:#569cd6">}</span> <span style="color:#9cdcfe">excludeControls</span><span style="color:#d4d4d4">=</span><span style="color:#569cd6">{</span><span style="color:#9cdcfe">excludeControls</span><span style="color:#569cd6">}</span><span style="color:#808080">/&gt;</span><br/><span style="color:#d4d4d4">    )</span><br/><br/><span style="color:#d4d4d4">  }</span><br/><br/>  <span style="color:#dcdcaa">handleChange</span> <span style="color:#d4d4d4">= (</span><span style="color:#9cdcfe">editorStste</span><span style="color:#d4d4d4">) </span><span style="color:#569cd6">=&gt;</span><span style="color:#d4d4d4"> {</span><br/>    <span style="color:#569cd6">this</span><span style="color:#d4d4d4">.</span><span style="color:#dcdcaa">setState</span><span style="color:#d4d4d4">({ </span><span style="color:#9cdcfe">editorStste</span><span style="color:#d4d4d4"> })</span><br/><span style="color:#d4d4d4">  }</span></span></code><br/><span style="color:#ce9178"><code><span style="color:#d4d4d4">}</span></code></span></pre>'
-              }}>
-              </div>
+              <pre className="demo-code">
+                <code className="language-jsx" dangerouslySetInnerHTML={{
+                  __html: easyDemoCode
+                }}></code>
+              </pre>
             )}
           </div>
           <div className="mode-switch">
