@@ -8,7 +8,8 @@ import 'antd/lib/input/style/index.css'
 import 'antd/lib/button/style/index.css'
 import 'antd/lib/form/style/index.css'
 
-const formDemoCode = formatHTML(`import React from 'react'
+const formDemoCode = formatHTML(`import 'braft-editor/dist/index.css'
+import React from 'react'
 import BraftEditor from 'braft-editor'
 import { Form, Input, Button } from 'antd'
 

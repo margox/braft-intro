@@ -2,7 +2,8 @@ import React from 'react'
 import BraftEditor from 'braft-editor'
 import { formatHTML } from '../utils/base'
 
-const previewDemoCode = formatHTML(`import React from 'react'
+const previewDemoCode = formatHTML(`import 'braft-editor/dist/index.css'
+import React from 'react'
 import BraftEditor from 'braft-editor'
 
 export default class PreviewDemo extends React.Component {

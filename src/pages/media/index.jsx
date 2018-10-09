@@ -3,7 +3,8 @@ import BraftEditor from 'braft-editor'
 import { ContentUtils } from 'braft-utils'
 import { formatHTML } from '../utils/base'
 
-const mediaDemoCode = formatHTML(`import React from 'react'
+const mediaDemoCode = formatHTML(`import 'braft-editor/dist/index.css'
+import React from 'react'
 import BraftEditor from 'braft-editor'
 import { ContentUtils } from 'braft-utils'
 
