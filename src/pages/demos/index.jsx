@@ -12,6 +12,7 @@ import FormDemo from 'pages/antd-form'
 import UploadDemo from 'pages/antd-upload'
 import RemDemo from 'pages/rem'
 import InlineStyleDemo from 'pages/inline-style'
+import EntityDemo from 'pages/entity'
 
 export default () => (
   <div className="page-demo container clearfix">
@@ -25,5 +26,6 @@ export default () => (
     <Route path="/demos/antd-upload" component={UploadDemo}></Route>
     <Route path="/demos/rem" component={RemDemo}></Route>
     <Route path="/demos/inline-style" component={InlineStyleDemo}></Route>
+    <Route path="/demos/entity" component={EntityDemo}></Route>
   </div>
 )
