@@ -1,6 +1,7 @@
 import React from 'react'
 import BraftEditor from 'braft-editor'
-import { formatHTML } from '../utils/base'
+import PrismWrapper from '../../components/prism'
+import { formatHTML } from '../../utils/base'
 
 const previewDemoCode = formatHTML(`import 'braft-editor/dist/index.css'
 import React from 'react'
@@ -113,7 +114,12 @@ export default class PreviewDemo extends React.Component {
 
     return (
       <div className="editor-wrapper">
-        <BraftEditor onChange={this.handleChange} excludeControls={excludeControls} extendControls={extendControls} contentStyle={{height: 400}}/>
+        <BraftEditor
+          onChange={this.handleChange}
+          excludeControls={excludeControls}
+          extendControls={extendControls}
+          contentStyle={{height: 400}}
+        />
       </div>
     )
 
@@ -121,7 +127,7 @@ export default class PreviewDemo extends React.Component {
 
 }`)
 
-export default class PreviewDemo extends React.Component {
+export default class PreviewDemo extends PrismWrapper {
 
   state = {
     editorState: BraftEditor.createEditorState()
@@ -214,7 +220,8 @@ export default class PreviewDemo extends React.Component {
       'superscript',
       'subscript',
       'hr',
-      'text-align'
+      'text-align',
+      'text-indent'
     ]
 
     const extendControls = [

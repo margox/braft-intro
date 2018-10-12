@@ -1,7 +1,8 @@
 import React from 'react'
 import BraftEditor from 'braft-editor'
 import { ContentUtils } from 'braft-utils'
-import { formatHTML } from '../utils/base'
+import PrismWrapper from '../../components/prism'
+import { formatHTML } from '../../utils/base'
 
 const mediaDemoCode = formatHTML(`import 'braft-editor/dist/index.css'
 import React from 'react'
@@ -135,15 +136,19 @@ const mediaItems = [
   }
 ]
 
-export default class BasicDemo extends React.Component {
+export default class BasicDemo extends PrismWrapper {
 
   state = {
     editorState: BraftEditor.createEditorState()
   }
 
   componentDidMount () {
+
+    super.componentDidMount()
+
     // 获取媒体库实例
     this.braftFinder = this.editorInstance.getFinderInstance()
+
   }
 
   addMediaItem = () => {

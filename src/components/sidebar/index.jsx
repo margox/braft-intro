@@ -11,10 +11,10 @@ export default () => (
       <NavLink to="/demos/preview">添加预览功能</NavLink>
       <NavLink to="/demos/media">设置媒体库初始内容</NavLink>
       <NavLink to="/demos/antd-form">在Ant Design表单中使用</NavLink>
-      <NavLink to="/demos/antd-upload">使用Ant Design上传组件</NavLink>
-      <NavLink to="/demos/rem">输出内容适配rem方案</NavLink>
-      <NavLink to="/demos/inline-style">增加自定义Inline Style</NavLink>
-      <NavLink to="/demos/entity">增加自定义Entity</NavLink>
+      <NavLink to="/demos/antd-upload">集成Ant Design上传组件</NavLink>
+      <NavLink to="/demos/rem">输出HTML单位转换为rem</NavLink>
+      <NavLink to="/demos/inline-style">增加着重号样式控制</NavLink>
+      <NavLink to="/demos/entity">增加按键展示效果</NavLink>
     </div>
   </div>
 )

@@ -1,6 +1,7 @@
 import React from 'react'
 import BraftEditor from 'braft-editor'
-import { formatHTML } from '../utils/base'
+import PrismWrapper from '../../components/prism'
+import { formatHTML } from '../../utils/base'
 
 const basicDemoCode = formatHTML(`import 'braft-editor/dist/index.css'
 import React from 'react'
@@ -36,13 +37,6 @@ export default class BasicDemo extends React.Component {
     })
   }
 
-  handleChange = (editorState) => {
-    this.setState({
-      editorState: editorState,
-      outputHTML: editorState.toHTML()
-    })
-  }
-
   render () {
 
     const { editorState, outputHTML } = this.state
@@ -50,7 +44,10 @@ export default class BasicDemo extends React.Component {
     return (
       <div>
         <div className="editor-wrapper">
-          <BraftEditor value={editorState} onChange={this.handleChange}/>
+          <BraftEditor
+            value={editorState}
+            onChange={this.handleChange}
+          />
         </div>
         <h5>输出内容</h5>
         <div className="output-content">{outputHTML}</div>
@@ -61,7 +58,7 @@ export default class BasicDemo extends React.Component {
 
 }`)
 
-export default class BasicDemo extends React.Component {
+export default class BasicDemo extends PrismWrapper {
 
   state = {
     editorState: BraftEditor.createEditorState('<p>Hello <b>World!</b></p>'), // 设置编辑器初始内容
@@ -69,9 +66,13 @@ export default class BasicDemo extends React.Component {
   }
 
   componentDidMount () {
+
+    super.componentDidMount()
+
     this.isLivinig = true
     // 3秒后更改编辑器内容
     setTimeout(this.setEditorContentAsync, 3000)
+
   }
 
   componentWillUnmount () {

@@ -1,7 +1,8 @@
 import './styles.scss'
 import React from 'react'
 import BraftEditor from 'braft-editor'
-import { formatHTML } from '../utils/base'
+import PrismWrapper from '../../components/prism'
+import { formatHTML } from '../../utils/base'
 
 const entityDemoCode = formatHTML(`import './styles.scss'
 import React from 'react'
@@ -81,7 +82,12 @@ export default class InlineStyleDemo extends React.Component {
 
     return (        
       <div className="embed-editor">
-        <BraftEditor id="demo-editor-with-entity-extension" controls={controls} value={editorState} onChange={this.handleChange}/>
+        <BraftEditor
+          id="demo-editor-with-entity-extension"
+          controls={controls}
+          value={editorState}
+          onChange={this.handleChange}
+        />
       </div>
     )
 
@@ -159,7 +165,7 @@ const entityExtension = {
 // BraftEditor.use(ext) 或者 BraftEditor.use([ext1, ext2, [ext3, ext4]])都是合法的
 BraftEditor.use(entityExtension)
 
-export default class EntityDemo extends React.Component {
+export default class EntityDemo extends PrismWrapper {
 
   state = {
     // 如果BraftEditor组件指定了id属性，则在通过html创建editorState时，也需要在createEditorState的第二个参数中传入这个id
@@ -183,7 +189,7 @@ export default class EntityDemo extends React.Component {
 
     return (
       <div className="demo-container pull-right">
-        <h3 className="caption">基本使用</h3>
+        <h3 className="caption">增加按键展示效果</h3>
         <h5 className="sub-caption">本页面将演示通过扩展来为编辑器增加着键盘按键展示功能</h5>
         <h5 className="section-caption">功能要点</h5>
         <ul className="points">
@@ -192,7 +198,8 @@ export default class EntityDemo extends React.Component {
         </ul>
         <h5 className="section-caption">注意事项</h5>
         <ul className="points">
-          <li>见源码注释</li>
+          <li>- 如果定义了className，别忘记在相关页面引入对应的CSS文件</li>
+          <li>- 其余见源码注释</li>
         </ul>
         <h5 className="section-caption">编辑器演示</h5>
         <div className="embed-editor">

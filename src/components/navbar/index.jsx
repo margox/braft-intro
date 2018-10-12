@@ -12,7 +12,6 @@ export default () => (
         <li><NavLink to="/">首页</NavLink></li>
         <li><NavLink to="/demos/basic">在线演示</NavLink></li>
         <li><a href="https://www.yuque.com/margox/be/lzwpnr" target="_blank">使用文档</a></li>
-        <li><NavLink to="/contact">交流反馈</NavLink></li>
       </ul>
     </div>
   </div>

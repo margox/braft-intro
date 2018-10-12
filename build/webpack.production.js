@@ -1,5 +1,6 @@
 var merge = require('webpack-merge')
-  , ExtractTextPlugin = require('extract-text-webpack-plugin')
+  , webpack = require('webpack')
+  , MiniCssExtractPlugin = require('mini-css-extract-plugin')
   , OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
   , HtmlWebpackPlugin = require('html-webpack-plugin')
   , path = require('path')
@@ -14,26 +15,35 @@ module.exports = merge(baseConfigs, {
   },
   output: {
     path: path.join(__dirname, '../dist'),
-    filename: 'index.js',
+    filename: '[name].js',
+    chunkFilename: '[name].[chunkhash:10].js',
     publicPath: '/',
     libraryTarget: 'umd'
   },
-  externals: {
-    'react': 'react',
-    'react-dom': 'react-dom',
-    'draft-js': 'draft-js',
-    'draft-convert': 'draft-convert',
-    'draftjs-utils': 'draftjs-utils',
-    'braft-finder': 'braft-finder',
-    'braft-utils': 'braft-utils',
-    'braft-convert': 'braft-convert',
-    'immutable': 'immutable'
-  },
   optimization: {
-    minimize: false,
+    minimize: true,
+    splitChunks: {      
+      cacheGroups: {
+        // commons: {
+        //   chunks: "initial",
+        //   minChunks: 2,
+        //   maxInitialRequests: 5, // The default limit is too small to showcase the effect
+        //   minSize: 0 // This is example is too small to create commons chunks
+        // },
+        vendor: {
+          test: /node_modules/,
+          chunks: 'initial',
+          name: 'vendor',
+          enforce: true
+        },
+      }
+    } 
   },
   plugins: [
-    new ExtractTextPlugin('index.css'),
+    new MiniCssExtractPlugin({
+      filename: "[name].css",
+      chunkFilename: "[id].css"
+    }),
     new OptimizeCssAssetsPlugin({
       assetNameRegExp: /.css$/,
       cssProcessor: require('cssnano'),
@@ -47,7 +57,9 @@ module.exports = merge(baseConfigs, {
       }
     }),
     new HtmlWebpackPlugin({
-      template: './src/index.html'
+      // minify: {},
+      // chunks: ['lib', 'index'],
+      template: './index.html'
     })
   ]
 })

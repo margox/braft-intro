@@ -2,13 +2,11 @@ import 'assets/scss/_base.scss'
 import 'braft-editor/dist/index.css'
 import React from 'react'
 import { BrowserRouter, Route } from 'react-router-dom'
+import asyncComponentLoader from './helpers/asyncComponetLoader'
 
 import Navbar from 'components/navbar'
 import FootBar from 'components/footbar'
 import ScrollTop from 'components/scrolltop'
-
-import IndexPage from 'pages/index'
-import DemosPage from 'pages/demos'
 
 export default class AppEntry extends React.Component {
 
@@ -19,8 +17,8 @@ export default class AppEntry extends React.Component {
         <ScrollTop>
           <div className="page-container">
             <Navbar />
-            <Route path="/" exact component={IndexPage}></Route>
-            <Route path="/demos" component={DemosPage}></Route>
+            <Route path="/" exact component={asyncComponentLoader(() => import(/* webpackChunkName: "page-index" */ 'pages/index'))}></Route>
+            <Route path="/demos" component={asyncComponentLoader(() => import(/* webpackChunkName: "page-demo" */ 'pages/demos'))}></Route>
             <FootBar />
           </div>
         </ScrollTop>

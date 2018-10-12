@@ -3,7 +3,8 @@ import BraftEditor from 'braft-editor'
 import { ContentUtils } from 'braft-utils'
 import { ImageUtils } from 'braft-finder'
 import { Upload, Icon } from 'antd'
-import { formatHTML } from '../utils/base'
+import PrismWrapper from '../../components/prism'
+import { formatHTML } from '../../utils/base'
 
 const basicDemoCode = formatHTML(`import 'braft-editor/dist/index.css'
 import React from 'react'
@@ -65,7 +66,12 @@ export default class UploadDemo extends React.Component {
     return (
       <div>
         <div className="editor-wrapper">
-          <BraftEditor value={this.state.editorState} onChange={this.handleChange} controls={controls} extendControls={extendControls} />
+          <BraftEditor
+            value={this.state.editorState}
+            onChange={this.handleChange}
+            controls={controls}
+            extendControls={extendControls}
+          />
         </div>
       </div>
     )
@@ -74,7 +80,7 @@ export default class UploadDemo extends React.Component {
 
 }`)
 
-export default class BasicDemo extends React.Component {
+export default class BasicDemo extends PrismWrapper {
 
   state = {
     editorState: BraftEditor.createEditorState(null)
@@ -126,7 +132,7 @@ export default class BasicDemo extends React.Component {
 
     return (
       <div className="demo-container pull-right">
-        <h3 className="caption">基本使用</h3>
+        <h3 className="caption">集成Ant Design上传组件</h3>
         <h5 className="sub-caption">本页面将演示如何用将Ant Design的Upload组件集成到编辑器</h5>
         <h5 className="section-caption">功能要点</h5>
         <ul className="points">

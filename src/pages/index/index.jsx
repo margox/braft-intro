@@ -3,7 +3,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import BraftEditor from 'braft-editor'
 import Prism from 'prismjs'
-import { formatHTML } from '../utils/base'
+import { formatHTML } from '../../utils/base'
 
 const easyDemoCode = formatHTML(`import 'braft-editor/dist/index.css'
 import React from 'react'
@@ -17,7 +17,10 @@ export default class PageDemo extends React.Component {
 
   render () {
     return (
-      <BraftEditor value={this.state.editorStste} onChange={this.handleChange} />
+      <BraftEditor
+        value={this.state.editorStste}
+        onChange={this.handleChange}
+      />
     )
   }
 
@@ -51,8 +54,8 @@ export default class PageIndex extends React.Component {
           <h1 className="caption">Braft Editor</h1>
           <h2 className="sub-caption">美观好用的React富文本编辑器</h2>
           <div className="buttons">
-            <button className="button-view-doc">查看文档</button>
-            <button className="button-fork">Star &amp; Fork</button>
+            <a href="https://www.yuque.com/margox/be/lzwpnr" target="_blank" className="button-view-doc">查看文档</a>
+            <a href="https://github.com/margox/braft-editor" target="_blank" className="button-fork">&ensp;Star &amp; Fork</a>
           </div>
           <div className="easy-demo">
             <div className="bar">
@@ -100,7 +103,7 @@ export default class PageIndex extends React.Component {
             <div className="item item-4">
               <div className="icon icon-4"></div>
               <h5 className="title">完善的扩展能力</h5>
-              <p className="description">在工具栏加个按钮不算啥，还有hooks可以控制编辑器的诸多行为</p>
+              <p className="description">编辑器功能不够用？分分钟写个extension来强化它！</p>
             </div>
           </div>
         </div>
@@ -112,7 +115,7 @@ export default class PageIndex extends React.Component {
             <Link to="/demos/basic" className="item">
               <span>基本使用</span>
             </Link>
-            <Link to="/demos/form" className="item">
+            <Link to="/demos/antd-form" className="item">
               <span>结合Ant.Design表单使用</span>
             </Link>
             <Link to="/demos/custom" className="item">
@@ -124,10 +127,10 @@ export default class PageIndex extends React.Component {
             <Link to="/demos/preview" className="item">
               <span>添加预览功能</span>
             </Link>
-            <Link to="/demos/unsplash" className="item">
+            <Link to="/demos/media" className="item">
               <span>设置媒体库初始内容</span>
             </Link>
-            <Link to="/demos/upload" className="item">
+            <Link to="/demos/antd-upload" className="item">
               <span>使用Ant.Design上传组件</span>
             </Link>
             <a className="item disabled">

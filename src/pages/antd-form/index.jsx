@@ -2,7 +2,8 @@ import './styles.scss'
 import React from 'react'
 import BraftEditor from 'braft-editor'
 import { Form, Input, Button } from 'antd'
-import { formatHTML } from '../utils/base'
+import PrismWrapper from '../../components/prism'
+import { formatHTML } from '../../utils/base'
 
 import 'antd/lib/input/style/index.css'
 import 'antd/lib/button/style/index.css'
@@ -74,7 +75,11 @@ class FormDemo extends React.Component {
                 }
               }],
             })(
-              <BraftEditor className="my-editor" controls={controls} placeholder="请输入正文内容" />
+              <BraftEditor
+                className="my-editor"
+                controls={controls}
+                placeholder="请输入正文内容"
+              />
             )}
           </FormItem>
           <FormItem {...formItemLayout}>
@@ -97,9 +102,11 @@ const formItemLayout = {
   wrapperCol: { span: 21, offset: 1 },
 }
 
-class FormDemo extends React.Component {
+class FormDemo extends PrismWrapper {
 
   componentDidMount () {
+
+    super.componentDidMount()
 
     // 异步设置编辑器内容
     setTimeout(() => {
@@ -133,7 +140,7 @@ class FormDemo extends React.Component {
 
     return (
       <div className="demo-container pull-right">
-        <h3 className="caption">基本使用</h3>
+        <h3 className="caption">在Ant Design表单中使用</h3>
         <h5 className="sub-caption">本页面将演示如何在Ant Design表单中使用Braft Editor</h5>
         <h5 className="section-caption">注意事项</h5>
         <ul className="points">

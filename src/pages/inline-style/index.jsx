@@ -1,6 +1,7 @@
 import React from 'react'
 import BraftEditor from 'braft-editor'
-import { formatHTML } from '../utils/base'
+import PrismWrapper from '../../components/prism'
+import { formatHTML } from '../../utils/base'
 
 const inlineStyleDemoCode = formatHTML(`import 'braft-editor/dist/index.css'
 import React from 'react'
@@ -68,7 +69,12 @@ export default class InlineStyleDemo extends React.Component {
 
     return (        
       <div className="embed-editor">
-        <BraftEditor id="demo-editor-with-underdot-ext" controls={controls} value={editorState} onChange={this.handleChange}/>
+        <BraftEditor
+          id="demo-editor-with-underdot-ext"
+          controls={controls}
+          value={editorState}
+          onChange={this.handleChange}
+        />
       </div>
     )
 
@@ -115,7 +121,7 @@ const underdotExtension = {
 // BraftEditor.use(ext) 或者 BraftEditor.use([ext1, ext2, [ext3, ext4]])都是合法的
 BraftEditor.use(underdotExtension)
 
-export default class InlineStyleDemo extends React.Component {
+export default class InlineStyleDemo extends PrismWrapper {
 
   state = {
     // 如果BraftEditor组件指定了id属性，则在通过html创建editorState时，也需要在createEditorState的第二个参数中传入这个id
@@ -139,7 +145,7 @@ export default class InlineStyleDemo extends React.Component {
 
     return (
       <div className="demo-container pull-right">
-        <h3 className="caption">基本使用</h3>
+        <h3 className="caption">增加着重号样式控制</h3>
         <h5 className="sub-caption">本页面将演示通过扩展来为编辑器增加着重号功能</h5>
         <h5 className="section-caption">功能要点</h5>
         <ul className="points">

@@ -1,7 +1,8 @@
 import React from 'react'
 import BraftEditor from 'braft-editor'
 import { ContentUtils } from 'braft-utils'
-import { formatHTML } from '../utils/base'
+import PrismWrapper from '../../components/prism'
+import { formatHTML } from '../../utils/base'
 
 const extendDemoCode = formatHTML(`import 'braft-editor/dist/index.css'
 import React from 'react'
@@ -57,7 +58,13 @@ export default class ExtendDemo extends React.Component {
 
     return (
       <div className="editor-wrapper">
-        <BraftEditor value={editorState} onChange={this.handleChange} controls={controls} extendControls={extendControls} contentStyle={{height: 200}}/>
+        <BraftEditor
+          value={editorState}
+          onChange={this.handleChange}
+          controls={controls}
+          extendControls={extendControls}
+          contentStyle={{height: 200}}
+        />
       </div>
     )
 
@@ -65,7 +72,7 @@ export default class ExtendDemo extends React.Component {
 
 }`)
 
-export default class ExtendDemo extends React.Component {
+export default class ExtendDemo extends PrismWrapper {
 
   state = {
     editorState: BraftEditor.createEditorState(null)

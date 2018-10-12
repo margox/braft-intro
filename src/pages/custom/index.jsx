@@ -1,6 +1,7 @@
 import React from 'react'
 import BraftEditor from 'braft-editor'
-import { formatHTML } from '../utils/base'
+import PrismWrapper from '../../components/prism'
+import { formatHTML } from '../../utils/base'
 
 const customDemoCode = formatHTML(`import 'braft-editor/dist/index.css'
 import React from 'react'
@@ -20,7 +21,10 @@ export default class CustomDemo extends React.Component {
 
     return (
       <div className="editor-wrapper">
-        <BraftEditor controls={controls} contentStyle={{height: 210, boxShadow: 'inset 0 1px 3px rgba(0,0,0,.1)'}}/>
+        <BraftEditor
+          controls={controls}
+          contentStyle={{height: 210, boxShadow: 'inset 0 1px 3px rgba(0,0,0,.1)'}}
+        />
       </div>
     )
 
@@ -28,7 +32,7 @@ export default class CustomDemo extends React.Component {
 
 }`)
 
-export default class BasicDemo extends React.Component {
+export default class BasicDemo extends PrismWrapper {
 
   render () {
 

@@ -1,31 +1,22 @@
 import './styles.scss'
 import React from 'react'
 import { Route } from 'react-router-dom'
+import asyncComponentLoader from '../../helpers/asyncComponetLoader'
 
 import SideBar from 'components/sidebar'
-import BasicDemo from 'pages/basic'
-import CustomDemo from 'pages/custom'
-import ExtendDemo from 'pages/extend'
-import PreviewDemo from 'pages/preview'
-import MediaDemo from 'pages/media'
-import FormDemo from 'pages/antd-form'
-import UploadDemo from 'pages/antd-upload'
-import RemDemo from 'pages/rem'
-import InlineStyleDemo from 'pages/inline-style'
-import EntityDemo from 'pages/entity'
 
 export default () => (
   <div className="page-demo container clearfix">
     <SideBar />
-    <Route path="/demos/basic" component={BasicDemo}></Route>
-    <Route path="/demos/custom" component={CustomDemo}></Route>
-    <Route path="/demos/extend" component={ExtendDemo}></Route>
-    <Route path="/demos/preview" component={PreviewDemo}></Route>
-    <Route path="/demos/media" component={MediaDemo}></Route>
-    <Route path="/demos/antd-form" component={FormDemo}></Route>
-    <Route path="/demos/antd-upload" component={UploadDemo}></Route>
-    <Route path="/demos/rem" component={RemDemo}></Route>
-    <Route path="/demos/inline-style" component={InlineStyleDemo}></Route>
-    <Route path="/demos/entity" component={EntityDemo}></Route>
+    <Route path="/demos/basic" component={asyncComponentLoader(() => import(/* webpackChunkName: "page-demo-basic" */ 'pages/basic'))}></Route>
+    <Route path="/demos/custom" component={asyncComponentLoader(() => import(/* webpackChunkName: "page-demo-custom" */ 'pages/custom'))}></Route>
+    <Route path="/demos/extend" component={asyncComponentLoader(() => import(/* webpackChunkName: "page-demo-extend" */ 'pages/extend'))}></Route>
+    <Route path="/demos/preview" component={asyncComponentLoader(() => import(/* webpackChunkName: "page-demo-preview" */ 'pages/preview'))}></Route>
+    <Route path="/demos/media" component={asyncComponentLoader(() => import(/* webpackChunkName: "page-demo-media" */ 'pages/media'))}></Route>
+    <Route path="/demos/antd-form" component={asyncComponentLoader(() => import(/* webpackChunkName: "page-demo-antd-form" */ 'pages/antd-form'))}></Route>
+    <Route path="/demos/antd-upload" component={asyncComponentLoader(() => import(/* webpackChunkName: "page-demo-antd-upload" */ 'pages/antd-upload'))}></Route>
+    <Route path="/demos/rem" component={asyncComponentLoader(() => import(/* webpackChunkName: "page-demo-rem" */ 'pages/rem'))}></Route>
+    <Route path="/demos/inline-style" component={asyncComponentLoader(() => import(/* webpackChunkName: "page-demo-inline-style" */ 'pages/inline-style'))}></Route>
+    <Route path="/demos/entity" component={asyncComponentLoader(() => import(/* webpackChunkName: "page-demo-entity" */ 'pages/entity'))}></Route>
   </div>
 )

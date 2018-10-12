@@ -1,6 +1,7 @@
 import React from 'react'
 import BraftEditor from 'braft-editor'
-import { formatHTML } from '../utils/base'
+import PrismWrapper from '../../components/prism'
+import { formatHTML } from '../../utils/base'
 import template from './template.js'
 
 const basicDemoCode = formatHTML(`import 'braft-editor/dist/index.css'
@@ -60,7 +61,11 @@ export default class BasicDemo extends React.Component {
     return (
       <div>
         <div className="editor-wrapper">
-          <BraftEditor value={this.state.editorState} converts={{ unitImportFn, unitExportFn }} onChange={this.handleChange}/>
+          <BraftEditor
+            value={this.state.editorState}
+            converts={{ unitImportFn, unitExportFn }}
+            onChange={this.handleChange}
+          />
         </div>
       </div>
     )
@@ -93,7 +98,7 @@ const unitExportFn = (unit, type, target) => {
   }
 }
 
-export default class RemDemo extends React.Component {
+export default class RemDemo extends PrismWrapper {
 
   state = {
     editorState: BraftEditor.createEditorState('<p>Hello <span style="font-size:1.28rem;">World!</span></p>', { unitImportFn })
@@ -147,7 +152,7 @@ export default class RemDemo extends React.Component {
 
     return (
       <div className="demo-container pull-right">
-        <h3 className="caption">基本使用</h3>
+        <h3 className="caption">输出HTML单位转换为rem</h3>
         <h5 className="sub-caption">本页面将演示如何输出兼容rem布局方案的html内容</h5>
         <h5 className="section-caption">功能要点</h5>
         <ul className="points">
