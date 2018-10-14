@@ -1,6 +1,5 @@
 var path = require('path')
   , fs = require('fs')
-  , ExtractTextPlugin = require('extract-text-webpack-plugin')
   , MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
@@ -59,8 +58,10 @@ module.exports = {
   resolve: {
     modules: [path.resolve(__dirname, '../src'), 'node_modules'],
     alias: {
+      'immutable': path.join(__dirname, '../node_modules', 'immutable'),
       'react': path.join(__dirname, '../node_modules', 'react'),
-      'scssinc': path.join(__dirname, '../src/assets/scss/_inc.scss')
+      'scssinc': path.join(__dirname, '../src/assets/scss/_inc.scss'),
+      '@ant-design/icons/lib/dist$': path.resolve(__dirname, '../src/icons.js'),
     },
     extensions: ['.js', '.jsx']
   }

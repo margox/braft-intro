@@ -1,10 +1,12 @@
 import React from 'react'
 import BraftEditor from 'braft-editor'
 import { ContentUtils } from 'braft-utils'
-import { ImageUtils } from 'braft-finder'
-import { Upload, Icon } from 'antd'
+// import { Upload, Icon } from 'antd'
 import PrismWrapper from '../../components/prism'
 import { formatHTML } from '../../utils/base'
+
+import Upload from 'antd/lib/upload'
+// import 'antd/lib/upload/style/css'
 
 const basicDemoCode = formatHTML(`import 'braft-editor/dist/index.css'
 import React from 'react'
@@ -29,16 +31,12 @@ export default class UploadDemo extends React.Component {
       return false
     }
   
-    const fileURL = URL.createObjectURL(param.file)
-
-    ImageUtils.compressImage(fileURL).then((res) => {
-      this.setState({
-        editorState: ContentUtils.insertMedias(this.state.editorState, [{
-          type: 'IMAGE',
-          url: res.url
-        }])
-      })
-    }).catch(console.log)
+    this.setState({
+      editorState: ContentUtils.insertMedias(this.state.editorState, [{
+        type: 'IMAGE',
+        url: URL.createObjectURL
+      }])
+    })
 
   }
 
@@ -96,16 +94,12 @@ export default class BasicDemo extends PrismWrapper {
       return false
     }
   
-    const fileURL = URL.createObjectURL(param.file)
-
-    ImageUtils.compressImage(fileURL).then((res) => {
-      this.setState({
-        editorState: ContentUtils.insertMedias(this.state.editorState, [{
-          type: 'IMAGE',
-          url: res.url
-        }])
-      })
-    }).catch(console.log)
+    this.setState({
+      editorState: ContentUtils.insertMedias(this.state.editorState, [{
+        type: 'IMAGE',
+        url: URL.createObjectURL(param.file)
+      }])
+    })
 
   }
 
@@ -123,7 +117,7 @@ export default class BasicDemo extends PrismWrapper {
             customRequest={this.uploadHandler}
           >
             <button className="control-item button upload-button" data-title="插入图片">
-              <Icon type="picture" theme="filled" />
+            插入图片
             </button>
           </Upload>
         )
@@ -142,7 +136,7 @@ export default class BasicDemo extends PrismWrapper {
         </ul>
         <h5 className="section-caption">注意事项</h5>
         <ul className="points">
-          <li>- 本示例中的ImageUtils.compressImage仅作为演示用，实际使用中请使用真实的上传功能</li>
+          <li>- 本示例中的URL.createObjectURL仅作为演示用，实际使用中请使用真实的上传功能</li>
           <li>- 通过component类型的extendControls来集成Upload组件，需要设置showUploadList为false以保证显示正常</li>
           <li>- 若需要使用完整的Upload组件功能，请使用dropdown或者modal类型的extendControls来进行集成</li>
         </ul>

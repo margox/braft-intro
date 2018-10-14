@@ -1,13 +1,16 @@
 import './styles.scss'
 import React from 'react'
 import BraftEditor from 'braft-editor'
-import { Form, Input, Button } from 'antd'
 import PrismWrapper from '../../components/prism'
 import { formatHTML } from '../../utils/base'
 
-import 'antd/lib/input/style/index.css'
-import 'antd/lib/button/style/index.css'
-import 'antd/lib/form/style/index.css'
+import Form from 'antd/lib/form'
+import Input from 'antd/lib/input'
+import Button from 'antd/lib/button'
+
+import 'antd/lib/form/style/css'
+import 'antd/lib/input/style/css'
+import 'antd/lib/button/style/css'
 
 const formDemoCode = formatHTML(`import 'braft-editor/dist/index.css'
 import React from 'react'
@@ -102,6 +105,11 @@ const formItemLayout = {
   wrapperCol: { span: 21, offset: 1 },
 }
 
+const formFooterLayout = {
+  labelCol: { span: 0 },
+  wrapperCol: { span: 21, offset: 3 },
+}
+
 class FormDemo extends PrismWrapper {
 
   componentDidMount () {
@@ -178,7 +186,7 @@ class FormDemo extends PrismWrapper {
                 <BraftEditor className="my-editor" controls={controls} placeholder="请输入正文内容" />
               )}
             </FormItem>
-            <FormItem {...formItemLayout}>
+            <FormItem {...formFooterLayout} label=" ">
               <Button size="large" type="primary" htmlType="submit">提交</Button>
             </FormItem>
           </Form>

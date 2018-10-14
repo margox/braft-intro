@@ -17,8 +17,8 @@ export default class AppEntry extends React.Component {
         <ScrollTop>
           <div className="page-container">
             <Navbar />
-            <Route path="/" exact component={asyncComponentLoader(() => import(/* webpackChunkName: "page-index" */ 'pages/index'))}></Route>
-            <Route path="/demos" component={asyncComponentLoader(() => import(/* webpackChunkName: "page-demo" */ 'pages/demos'))}></Route>
+            <Route path="/" exact component={asyncComponentLoader(() => import(/* webpackChunkName: "page_index" */ 'pages/index'))}></Route>
+            <Route path="/demos" component={asyncComponentLoader(() => import(/* webpackChunkName: "page_demo" */ 'pages/demos'))}></Route>
             <FootBar />
           </div>
         </ScrollTop>

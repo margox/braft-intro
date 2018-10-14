@@ -14,14 +14,10 @@
     "@babel/react"
   ],
   "plugins": [
-    "dynamic-import-webpack",
     "react-hot-loader/babel",
     "@babel/transform-runtime",
     "@babel/proposal-class-properties",
-    ["import", {
-      "libraryName": "antd",
-      "style": false
-    }],
+    "@babel/plugin-syntax-dynamic-import",
     ["prismjs", {
       "languages": ["javascript", "css", "jsx"],
       "theme": "tomorrow",

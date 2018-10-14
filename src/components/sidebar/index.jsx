@@ -15,6 +15,8 @@ export default () => (
       <NavLink to="/demos/rem">输出HTML单位转换为rem</NavLink>
       <NavLink to="/demos/inline-style">增加着重号样式控制</NavLink>
       <NavLink to="/demos/entity">增加按键展示效果</NavLink>
+      <NavLink to="/demos/color-picker">使用高级取色器扩展</NavLink>
+      <NavLink to="/demos/code-highlighter">使用代码高亮扩展</NavLink>
     </div>
   </div>
 )
