@@ -138,6 +138,22 @@ export default class PageIndex extends React.Component {
             </a>
           </div>
         </div>
+        <div className="index-section section-donate">
+          <h3 className="caption">
+            <span>觉得不错？请我喝一杯吧</span>
+            <small>扫描下面的二维码，给我来杯82年的青岛压压惊</small>
+          </h3>
+          <div className="donate-qrcodes">
+            <div className="alipay">
+              <img src={require('assets/images/qrcode-alipay.png')} alt="支付宝"/>
+              <span>支付宝</span>
+            </div>
+            <div className="wechat">
+              <img src={require('assets/images/qrcode-wechat.png')} alt="微信支付"/>
+              <span>微信</span>
+            </div>
+          </div>
+        </div>
       </div>
     )
   }

@@ -180,18 +180,17 @@
       margin: 0;
       padding: 0;
       text-align: center;
-      &::after{
-        display: block;
-        width: 60px;
-        height: 1px;
-        background-color: #d1d1d1;
-        margin: 10px auto 0 auto;
-        content: '';
-      }
       span{
         color: #515559;
         font-size: 28px;
         font-weight: 400;
+      }
+      small{
+        display: block;
+        margin-top: 10px;
+        color: #818589;
+        font-size: 18px;
+        font-weight: 300;
       }
     }
   }
@@ -286,6 +285,38 @@
         &.disabled{
           background-color: #f9f9f9;
           pointer-events: none;
+        }
+      }
+    }
+  }
+
+  .section-donate{
+    .donate-qrcodes{
+      width: 600px;
+      margin: 50px auto 0 auto;
+      overflow: hidden;
+      > div{
+        float: left;
+        width: 300px;
+        img{
+          display: block;
+          width: 180px;
+          height: 180px;
+          margin: 0 auto;
+          border: 1px solid #eee;
+          border-radius: 5px;
+          box-shadow: 0 5px 30px rgba(#000, .06);
+          &:hover{
+            border-color: rgba($COLOR_ACTIVE, .3);
+            box-shadow: 0 5px 30px rgba($COLOR_ACTIVE, .2);
+          }
+        }
+        span{
+          display: block;
+          margin-top: 20px;
+          color: #818589;
+          font-size: 16px;
+          text-align: center;
         }
       }
     }
