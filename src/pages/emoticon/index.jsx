@@ -17,14 +17,14 @@ import 'braft-extensions/dist/emoticon.css'
 import Emoticon, { defaultEmoticons } from 'braft-extensions/dist/emoticon'
 
 // 转换默认表情包列表，让webpack可以正确加载到默认表情包中的图片，请确保已对png格式的文件配置了loader
-const emiticons = defaultEmoticons.map(item => require(\`braft-extensions/dist/assets/\${item}\`))
+const emoticons = defaultEmoticons.map(item => require(\`braft-extensions/dist/assets/\${item}\`))
 
 // 也可以使用自己的表情包资源
-// const emiticons = ['http://path/to/emoticon-1.png', 'http://path/to/emoticon-2.png', 'http://path/to/emoticon-3.png', 'http://path/to/emoticon-4.png', ...]
+// const emoticons = ['http://path/to/emoticon-1.png', 'http://path/to/emoticon-2.png', 'http://path/to/emoticon-3.png', 'http://path/to/emoticon-4.png', ...]
 
 BraftEditor.use(Emoticon({
   includeEditors: ['demo-editor-with-emoticon'],
-  emoticons: emiticons
+  emoticons: emoticons
 }))
 
 export default class EmoticonDemo extends React.Component {
@@ -41,11 +41,11 @@ export default class EmoticonDemo extends React.Component {
 
 }`)
 
-const emiticons = defaultEmoticons.map(item => require(`braft-extensions/dist/assets/${item}`))
+const emoticons = defaultEmoticons.map(item => require(`braft-extensions/dist/assets/${item}`))
 
 BraftEditor.use(Emoticon({
   includeEditors: ['demo-editor-with-emoticon'],
-  emoticons: emiticons
+  emoticons: emoticons
 }))
 
 export default class EmoticonDemo extends PrismWrapper {
