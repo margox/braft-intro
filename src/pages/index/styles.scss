@@ -8,8 +8,8 @@
     height: 850px;
     margin-bottom: 250px;
     padding-top: 10px;
-    background-color: $COLOR_ACTIVE;
-    background-image: linear-gradient(to bottom, $COLOR_ACTIVE, $COLOR_ACTIVE - 10);
+    background-color: $COLOR_DARK;
+    // background-image: linear-gradient(to bottom, $COLOR_DARK, $COLOR_DARK - 10);
     .caption,
     .sub-caption{
       padding: 0;
@@ -48,7 +48,7 @@
       }
       .button-view-doc{
         background-color: #fff;
-        color: $COLOR_ACTIVE;
+        color: $COLOR_DARK;
       }
       .button-fork{
         background-color: transparent;
@@ -58,32 +58,8 @@
         }
       }
     }
-
-    .shape{
-      position: absolute;
-      z-index: 0;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 50px;
-      overflow: hidden;
-      &::after{
-        position: absolute;
-        z-index: 0;
-        top: 0;
-        left: 50%;
-        width: 20000px;
-        height: 20000px;
-        background-color: #fff;
-        border-radius: 50%;
-        content: '';
-        transform: translateX(-50%);
-      }
-    }
   
     .easy-demo{
-      position: relative;
-      z-index: 2;
       width: 900px;
       margin: 100px auto 0 auto;
       overflow: hidden;

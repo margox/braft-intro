@@ -1,0 +1,51 @@
+@import "~scssinc";
+
+$rectCount: 5;
+$animationDuration: 1.2s;
+$delayRange: 0.4s;
+
+.page-loading{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  min-height: 1200px;
+  .loader {
+    width: 80px;
+    height: 30px;
+    text-align: center;
+    font-size: 10px;
+    .rect {
+      background-color: rgba($COLOR_ACTIVE, 1);
+      height: 100%;
+      width: 4px;
+      margin: 0 2px;
+      display: inline-block;
+      animation: waveDelay $animationDuration infinite ease-in-out;
+    }
+    @for $i from 1 through 5 {
+      .rect-#{$i} { animation-delay: - $animationDuration + $delayRange / ($rectCount - 1) * ($i - 1); }
+    }
+  }
+  .text{
+    display: block;
+    margin-top: 15px;
+    color: #919599;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+}
+
+@keyframes waveDelay {
+  0%, 40%, 100% {
+    opacity: .5;
+    transform: scaleY(0.4)
+  }
+  20% {
+    opacity: 1;
+    transform: scaleY(1.0)
+  }
+}

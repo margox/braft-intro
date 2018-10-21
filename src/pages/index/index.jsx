@@ -17,10 +17,7 @@ export default class PageDemo extends React.Component {
 
   render () {
     return (
-      <BraftEditor
-        value={this.state.editorStste}
-        onChange={this.handleChange}
-      />
+      <BraftEditor value={this.state.editorStste} onChange={this.handleChange}/>
     )
   }
 
@@ -78,7 +75,6 @@ export default class PageIndex extends React.Component {
             <button data-mode="editor" onClick={this.switchMode} className={editorMode === 'editor' ? 'active' : null}>示例</button>
             <button data-mode="code" onClick={this.switchMode} className={editorMode === 'code' ? 'active' : null}>源码</button>
           </div>
-          <div className="shape"></div>
         </div>
         <div className="index-section section-features">
           <h3 className="caption">

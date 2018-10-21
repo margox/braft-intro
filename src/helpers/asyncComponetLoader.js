@@ -4,8 +4,9 @@
  * instance of Component to the static implementation of `load`.
  */
 import React from 'react'
+import PageLoading from 'components/loading'
 
-export default (loader, Placeholder) => {
+export default (loader) => {
 
   let Component = null
 
@@ -48,10 +49,7 @@ export default (loader, Placeholder) => {
       if (ComponentFromState) {
         return <ComponentFromState {...this.props} />
       }
-      if (Placeholder) {
-        return <Placeholder {...this.props} />
-      }
-      return null
+      return <PageLoading />
     }
   }
 }

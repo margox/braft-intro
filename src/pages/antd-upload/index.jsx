@@ -53,7 +53,8 @@ export default class UploadDemo extends React.Component {
             showUploadList={false}
             customRequest={this.uploadHandler}
           >
-            <button className="control-item button upload-button" data-title="插入图片">
+            {/* 这里的按钮最好加上type="button"，以避免在表单容器中触发表单提交，用Antd的Button组件则无需如此 */}
+            <button type="button" className="control-item button upload-button" data-title="插入图片">
               <Icon type="picture" theme="filled" />
             </button>
           </Upload>
