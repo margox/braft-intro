@@ -13,8 +13,8 @@ const entityExtension = {
   type: 'entity',
   // 指定该扩展对哪些编辑器生效，不指定includeEditors则对所有编辑器生效
   includeEditors: ['demo-editor-with-entity-extension'],
-  // 指定扩展的entity名称
-  name: 'keybord-item',
+  // 指定扩展的entity名称，推荐使用全部大写，内部也会将小写转换为大写
+  name: 'KEYBOARD-ITEM',
   // 在编辑器工具栏中增加一个控制按钮，点击时会将所选文字转换为该entity
   control: {
     text: '按键'
@@ -119,8 +119,8 @@ const entityExtension = {
   type: 'entity',
   // 指定该扩展对哪些编辑器生效，不指定includeEditors则对所有编辑器生效
   includeEditors: ['demo-editor-with-entity-extension'],
-  // 指定扩展的entity名称
-  name: 'keybord-item',
+  // 指定扩展的entity名称，推荐使用全部大写，内部也会将小写转换为大写
+  name: 'KEYBOARD-ITEM',
   // 在编辑器工具栏中增加一个控制按钮，点击时会将所选文字转换为该entity
   control: {
     text: '按键'
