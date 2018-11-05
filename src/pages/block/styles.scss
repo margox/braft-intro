@@ -1,0 +1,39 @@
+.foo-block-element{
+  margin: 10px;
+  padding: 30px;
+  background-color: #08a9fe;
+  border-radius: 5px;
+  box-shadow: 0 5px 20px rgba(#08a9fe, .1);
+  color: #fff;
+}
+.bar-block-component{
+  position: relative;
+  margin: 10px;
+  padding: 30px;
+  background-color: #c0392b;
+  border-radius: 5px;
+  box-shadow: 0 5px 20px rgba(#c0392b, .1);
+  color: #fff;
+  h2{
+    margin: 0;
+    padding: 0;
+  }
+  .button-remove{
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    &:hover{
+      opacity: .5;
+    }
+  }
+}

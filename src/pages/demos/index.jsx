@@ -18,6 +18,7 @@ export default () => (
     <Route path="/demos/rem" component={asyncComponentLoader(() => import(/* webpackChunkName: "demo_rem" */ 'pages/rem'))}></Route>
     <Route path="/demos/inline-style" component={asyncComponentLoader(() => import(/* webpackChunkName: "demo_inline_style" */ 'pages/inline-style'))}></Route>
     <Route path="/demos/entity" component={asyncComponentLoader(() => import(/* webpackChunkName: "demo_entity" */ 'pages/entity'))}></Route>
+    <Route path="/demos/block" component={asyncComponentLoader(() => import(/* webpackChunkName: "demo_block" */ 'pages/block'))}></Route>
     <Route path="/demos/color-picker" component={asyncComponentLoader(() => import(/* webpackChunkName: "demo_color_picker" */ 'pages/color-picker'))}></Route>
     <Route path="/demos/emoticon" component={asyncComponentLoader(() => import(/* webpackChunkName: "demo_emoticon" */ 'pages/emoticon'))}></Route>
     <Route path="/demos/code-highlighter" component={asyncComponentLoader(() => import(/* webpackChunkName: "demo_code_highlighter" */ 'pages/code-highlighter'))}></Route>
