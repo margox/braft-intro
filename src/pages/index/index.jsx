@@ -17,12 +17,12 @@ export default class PageDemo extends React.Component {
 
   render () {
     return (
-      <BraftEditor value={this.state.editorStste} onChange={this.handleChange}/>
+      <BraftEditor value={this.state.editorState} onChange={this.handleChange}/>
     )
   }
 
-  handleChange = (editorStste) => {
-    this.setState({ editorStste })
+  handleChange = (editorState) => {
+    this.setState({ editorState })
   }
 
 }`)

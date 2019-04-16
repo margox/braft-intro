@@ -67,6 +67,7 @@
     "@babel/runtime": "^7.0.0",
     "antd": "^3.9.3",
     "babel-plugin-prismjs": "^1.0.2",
+    "babel-polyfill": "^6.26.0",
     "braft-convert": "^2.1.4",
     "braft-editor": "^2.1.16",
     "braft-extensions": "^0.0.3",

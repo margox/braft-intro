@@ -1162,6 +1162,14 @@ babel-plugin-transform-runtime@^6.23.0:
   dependencies:
     babel-runtime "^6.22.0"
 
+babel-polyfill@^6.26.0:
+  version "6.26.0"
+  resolved "https://registry.yarnpkg.com/babel-polyfill/-/babel-polyfill-6.26.0.tgz#379937abc67d7895970adc621f284cd966cf2153"
+  dependencies:
+    babel-runtime "^6.26.0"
+    core-js "^2.5.0"
+    regenerator-runtime "^0.10.5"
+
 babel-runtime@6.x, babel-runtime@^6.22.0, babel-runtime@^6.23.0, babel-runtime@^6.26.0:
   version "6.26.0"
   resolved "https://registry.yarnpkg.com/babel-runtime/-/babel-runtime-6.26.0.tgz#965c7058668e82b55d7bfe04ff2337bc8b5647fe"
@@ -1307,21 +1315,21 @@ braces@^2.3.0, braces@^2.3.1:
     split-string "^3.0.2"
     to-regex "^3.0.1"
 
-braft-convert@^2.1.4:
-  version "2.1.9"
-  resolved "https://registry.yarnpkg.com/braft-convert/-/braft-convert-2.1.9.tgz#fd756365528877e364196f3b7839680484d00172"
+braft-convert@^2.1.10, braft-convert@^2.1.4:
+  version "2.1.12"
+  resolved "https://registry.yarnpkg.com/braft-convert/-/braft-convert-2.1.12.tgz#dc331722feb5fe3fc2392d44db0c02922c19c6b2"
   dependencies:
     draft-convert "^2.0.0"
     draft-js "^0.10.3"
 
 braft-editor@^2.1.16:
-  version "2.1.26"
-  resolved "https://registry.yarnpkg.com/braft-editor/-/braft-editor-2.1.26.tgz#c8e65b534f64210a67a66e2b8cfa1f585f36e1e5"
+  version "2.2.9"
+  resolved "https://registry.yarnpkg.com/braft-editor/-/braft-editor-2.2.9.tgz#8990b6b638a69daebfb57e3f1f8e057166abc5be"
   dependencies:
     "@babel/runtime" "^7.0.0"
-    braft-convert "^2.1.4"
-    braft-finder "^0.0.14"
-    braft-utils "^3.0.4"
+    braft-convert "^2.1.10"
+    braft-finder "^0.0.18"
+    braft-utils "^3.0.8"
     draft-convert "^2.0.0"
     draft-js "^0.10.3"
     draft-js-multidecorators "^1.0.0"
@@ -1338,17 +1346,17 @@ braft-finder@^0.0.10:
   version "0.0.10"
   resolved "https://registry.yarnpkg.com/braft-finder/-/braft-finder-0.0.10.tgz#1620cd56f423bca07978db3faf646a03f56fdb52"
 
-braft-finder@^0.0.14:
-  version "0.0.14"
-  resolved "https://registry.yarnpkg.com/braft-finder/-/braft-finder-0.0.14.tgz#f5a65548a00dbe3193be58a90fffe5264f0a1184"
+braft-finder@^0.0.18:
+  version "0.0.18"
+  resolved "https://registry.yarnpkg.com/braft-finder/-/braft-finder-0.0.18.tgz#5f43659b61290081fb2920cc3ce1f62e31e9da57"
 
 braft-utils@^2.1.2:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/braft-utils/-/braft-utils-2.1.2.tgz#115480335a28c44a27e92711402771843d1657bb"
 
-braft-utils@^3.0.4:
-  version "3.0.5"
-  resolved "https://registry.yarnpkg.com/braft-utils/-/braft-utils-3.0.5.tgz#8b29ce42be8134a62fee59fba5971ad0fb73f56f"
+braft-utils@^3.0.8:
+  version "3.0.11"
+  resolved "https://registry.yarnpkg.com/braft-utils/-/braft-utils-3.0.11.tgz#8a977f47b99dde09473363b90c3fe587103f3abe"
 
 brorand@^1.0.1:
   version "1.1.0"
@@ -1882,6 +1890,10 @@ core-js@^1.0.0:
 core-js@^2.4.0:
   version "2.5.7"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.5.7.tgz#f972608ff0cead68b841a16a932d0b183791814e"
+
+core-js@^2.5.0:
+  version "2.6.5"
+  resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.6.5.tgz#44bc8d249e7fb2ff5d00e0341a7ffb94fbf67895"
 
 core-util-is@1.0.2, core-util-is@~1.0.0:
   version "1.0.2"
@@ -3548,7 +3560,7 @@ immutable@*, immutable@^3.7.4:
 
 immutable@~3.7.4:
   version "3.7.6"
-  resolved "http://registry.npmjs.org/immutable/-/immutable-3.7.6.tgz#13b4d3cb12befa15482a26fe1b2ebae640071e4b"
+  resolved "https://registry.yarnpkg.com/immutable/-/immutable-3.7.6.tgz#13b4d3cb12befa15482a26fe1b2ebae640071e4b"
 
 import-local@^1.0.0:
   version "1.0.0"
@@ -6132,6 +6144,10 @@ regenerate-unicode-properties@^7.0.0:
 regenerate@^1.2.1, regenerate@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/regenerate/-/regenerate-1.4.0.tgz#4a856ec4b56e4077c557589cae85e7a4c8869a11"
+
+regenerator-runtime@^0.10.5:
+  version "0.10.5"
+  resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.10.5.tgz#336c3efc1220adcedda2c9fab67b5a7955a33658"
 
 regenerator-runtime@^0.11.0:
   version "0.11.1"
